@@ -1,0 +1,32 @@
+#Deployment File
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: saharsh-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: saharsh-pod
+  template:
+    metadata:
+      labels:
+        app: saharsh-pod
+    spec:
+      containers:
+      - name: cicd-container
+        image: gcr.io/rb-munish-playground/cicd-testing:latest
+
+#LoadBalancer Service
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: cicd-services
+spec:
+  type: LoadBalancer
+  selector:
+    app: saharsh-pod
+  ports:
+  - port: 80
+    targetPort: 5000
