@@ -3,7 +3,7 @@ app=Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Welcome to Home Page"
+    return "Welcome to Home Page all"
 
 @app.route("/nikhil")
 def nikhil():
