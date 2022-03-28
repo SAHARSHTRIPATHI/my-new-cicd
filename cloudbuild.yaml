@@ -16,3 +16,5 @@ steps:
     - --image=gcr.io/rb-munish-playground/cicd-testing:latest
     - --location=us-central1-c
     - --cluster=cluster-saharsh
+options:
+  logging: CLOUD_LOGGING_ONLY
